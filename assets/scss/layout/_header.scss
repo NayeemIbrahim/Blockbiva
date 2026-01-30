@@ -1,0 +1,82 @@
+/* Blockbiva Header styling */
+header,
+.site-header,
+.wp-block-template-part-header {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 9999 !important;
+    background-color: rgba(255, 255, 255, 0.82) !important;
+    backdrop-filter: blur(15px) saturate(200%) !important;
+    -webkit-backdrop-filter: blur(15px) saturate(200%) !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+
+    /* Responsive Padding from Customizer */
+    padding-top: var(--header-padding, 20px) !important;
+    padding-bottom: var(--header-padding, 20px) !important;
+    min-height: auto !important;
+
+    @media (max-width: 768px) {
+        padding-top: 10px !important;
+        padding-bottom: 10px !important;
+    }
+}
+
+body.is-dark-theme {
+
+    header,
+    .site-header,
+    .wp-block-template-part-header {
+        background-color: rgba(15, 23, 42, 0.82) !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+    }
+}
+
+/* Navigation Spacing & Micro-interactions */
+.wp-block-navigation {
+    .wp-block-navigation-item {
+        margin: 0 1.25rem;
+    }
+
+    .wp-block-navigation-item__content {
+        font-weight: 600;
+        color: inherit !important;
+        transition: all 0.2s ease-out;
+        position: relative;
+        padding: 0.25rem 0;
+        text-decoration: none !important;
+        letter-spacing: var(--menu-letter-spacing, 0.5px);
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--wp--preset--color--primary);
+            transition: all 0.2s ease-out;
+        }
+
+        &:hover,
+        &:focus {
+            color: var(--wp--preset--color--primary) !important;
+
+            &::after {
+                width: 100%;
+            }
+        }
+    }
+
+    /* Active State for Current Page */
+    .current-menu-item>.wp-block-navigation-item__content,
+    .current_page_item>.wp-block-navigation-item__content,
+    .current-menu-ancestor>.wp-block-navigation-item__content {
+        color: var(--wp--preset--color--primary) !important;
+        font-weight: 700;
+
+        &::after {
+            width: 100%;
+        }
+    }
+}

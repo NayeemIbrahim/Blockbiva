@@ -1,0 +1,11 @@
+// SCSS Mixins and Helpers using variables
+@mixin mq($breakpoint) {
+    @media (min-width: map-get($breakpoints, $breakpoint)) {
+        @content;
+    }
+}
+
+// Convert Hex to RGB for CSS variables
+@function hexToRGB($hex) {
+    @return red($hex), green($hex), blue($hex);
+}

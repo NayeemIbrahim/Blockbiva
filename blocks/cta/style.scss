@@ -1,0 +1,9 @@
+.premium-cta-block {
+    text-align: center;
+    border-radius: var(--wp--custom--border-radius--md);
+
+    .premium-cta-inner {
+        max-width: var(--wp--style--global--content-size);
+        margin: 0 auto;
+    }
+}

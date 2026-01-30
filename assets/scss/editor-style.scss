@@ -1,0 +1,19 @@
+@import 'variables';
+
+/**
+ * Editor-only styles to make the backend match the frontend.
+ */
+
+.editor-styles-wrapper {
+    font-family: map-get($font-families, "system");
+    line-height: 1.6;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: map-get($font-families, "system");
+    }
+}

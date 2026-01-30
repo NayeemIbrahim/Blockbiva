@@ -1,0 +1,142 @@
+.premium-range-control {
+    margin-bottom: 25px;
+    padding: 15px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.premium-range-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.premium-range-title {
+    font-weight: 700;
+    font-size: 14px;
+    color: #334155;
+}
+
+.premium-responsive-toggle {
+    display: flex;
+    gap: 6px;
+}
+
+.premium-responsive-toggle button {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    color: #64748b;
+    padding: 5px;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+}
+
+.premium-responsive-toggle button:hover {
+    background: #f1f5f9;
+    color: #475569;
+}
+
+.premium-responsive-toggle button.active {
+    background: #4f46e5;
+    color: #ffffff;
+    border-color: #4f46e5;
+    box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.2);
+}
+
+.premium-range-field {
+    display: none;
+}
+
+.premium-range-field.active {
+    display: block;
+}
+
+.premium-range-input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Custom Range Input */
+.premium-range-input-wrapper input[type="range"] {
+    flex: 1;
+    -webkit-appearance: none;
+    height: 4px;
+    background: #e2e8f0;
+    border-radius: 2px;
+    outline: none;
+}
+
+.premium-range-input-wrapper input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    background: #4f46e5;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.1s ease;
+}
+
+.premium-range-input-wrapper input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scale(1.1);
+}
+
+/* Number Input Box */
+.premium-range-number-unit {
+    display: flex;
+    align-items: center;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    overflow: hidden;
+    width: 90px;
+}
+
+.premium-range-number-unit input[type="number"] {
+    width: 55px;
+    border: none !important;
+    background: transparent;
+    padding: 5px 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #1e293b;
+    text-align: center;
+    -moz-appearance: textfield;
+}
+
+.premium-range-number-unit input[type="number"]::-webkit-inner-spin-button,
+.premium-range-number-unit input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.premium-range-number-unit .unit {
+    background: #f1f5f9;
+    color: #64748b;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 8px 6px;
+    min-width: 30px;
+    text-align: center;
+    border-left: 1px solid #e2e8f0;
+}
+
+.customize-control-description {
+    margin-top: 12px;
+    font-style: italic;
+    color: #94a3b8;
+    line-height: 1.4;
+    font-size: 11px;
+}

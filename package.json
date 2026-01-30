@@ -1,0 +1,19 @@
+{
+    "name": "blockbiva",
+    "version": "1.0.0",
+    "description": "Blockbiva: Fast, Flexible & Gutenberg First WordPress Theme.",
+    "main": "index.js",
+    "scripts": {
+        "watch": "sass --watch assets/scss/main.scss:assets/css/main.css assets/scss/editor-style.scss:assets/css/editor-style.css blocks/hero/style.scss:blocks/hero/style.css blocks/cta/style.scss:blocks/cta/style.css blocks/pricing/style.scss:blocks/pricing/style.css blocks/features/style.scss:blocks/features/style.css",
+        "build": "sass assets/scss/main.scss:assets/css/main.css assets/scss/editor-style.scss:assets/css/editor-style.css blocks/hero/style.scss:blocks/hero/style.css blocks/cta/style.scss:blocks/cta/style.css blocks/pricing/style.scss:blocks/pricing/style.css blocks/features/style.scss:blocks/features/style.css --style compressed",
+        "browser-sync": "browser-sync start --config bs-config.js",
+        "dev": "npm-run-all --parallel watch browser-sync"
+    },
+    "author": "Nayeem Ibrahim",
+    "license": "GPL-2.0-or-later",
+    "devDependencies": {
+        "browser-sync": "^3.0.4",
+        "npm-run-all": "^4.1.5",
+        "sass": "^1.70.0"
+    }
+}

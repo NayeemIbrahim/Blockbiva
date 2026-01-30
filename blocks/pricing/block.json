@@ -1,0 +1,29 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "blockbiva/pricing",
+    "version": "1.0.0",
+    "title": "Pricing Table",
+    "category": "design",
+    "icon": "money-alt",
+    "description": "A flexible pricing table container.",
+    "supports": {
+        "html": false,
+        "align": [
+            "wide",
+            "full"
+        ],
+        "spacing": {
+            "margin": true,
+            "padding": true,
+            "blockGap": true
+        },
+        "color": {
+            "background": true,
+            "text": true
+        }
+    },
+    "textdomain": "blockbiva",
+    "style": "file:./style.css",
+    "render": "file:./render.php"
+}

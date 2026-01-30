@@ -1,0 +1,35 @@
+/* Block styles for Hero */
+.premium-hero-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 60vh;
+    padding: var(--wp--preset--spacing--5) 0;
+}
+
+.premium-hero-container {
+    max-width: var(--wp--style--global--wide-size);
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Block styles for CTA */
+.premium-cta-block {
+    text-align: center;
+    border-radius: var(--wp--custom--border-radius--md);
+    overflow: hidden;
+}
+
+/* Pricing Table */
+.premium-pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--wp--preset--spacing--3);
+}
+
+/* Feature Grid */
+.premium-feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--wp--preset--spacing--4);
+}

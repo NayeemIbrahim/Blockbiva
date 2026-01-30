@@ -1,0 +1,20 @@
+// General body styling
+body {
+    background-color: map-get($colors, "base");
+    color: map-get($colors, "contrast");
+    font-family: map-get($font-families, "body");
+    line-height: 1.6;
+    margin: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+    &.is-dark-theme {
+        background-color: map-get($dark-colors, "base");
+        color: map-get($dark-colors, "contrast");
+
+        // CSS Variable Overrides for Gutenberg blocks
+        --wp--preset--color--base: #{map-get($dark-colors, "base")};
+        --wp--preset--color--contrast: #{map-get($dark-colors, "contrast")};
+        --wp--preset--color--neutral-light: #{map-get($dark-colors, "neutral-light")};
+        --wp--preset--color--neutral-dark: #{map-get($dark-colors, "neutral-dark")};
+    }
+}

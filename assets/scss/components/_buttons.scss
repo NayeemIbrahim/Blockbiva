@@ -1,0 +1,46 @@
+/* Button Styles */
+.wp-block-button__link {
+    background-color: var(--wp--preset--color--primary);
+    color: #fff;
+    padding: 0.875rem 2rem;
+    border-radius: 50px; // Pill shape for modern look
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 2px solid transparent;
+
+    &:hover {
+        background-color: var(--wp--preset--color--secondary);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+        text-decoration: none;
+        color: #fff;
+    }
+
+    &:active {
+        transform: translateY(0);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    &:focus-visible {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5), 0 0 0 5px var(--wp--preset--color--primary);
+    }
+
+    &.is-style-outline {
+        background: transparent;
+        border-color: currentColor;
+        color: var(--wp--preset--color--primary);
+        box-shadow: none;
+
+        &:hover {
+            background-color: var(--wp--preset--color--primary);
+            border-color: var(--wp--preset--color--primary);
+            color: #fff;
+        }
+    }
+}
