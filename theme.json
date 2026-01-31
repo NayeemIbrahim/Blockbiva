@@ -294,5 +294,28 @@
 				}
 			}
 		}
-	}
+	},
+	"customTemplates": [
+		{
+			"name": "blog-full-width",
+			"title": "Blog (Full Width)",
+			"postTypes": [
+				"page"
+			]
+		},
+		{
+			"name": "blog-left-sidebar",
+			"title": "Blog (Left Sidebar)",
+			"postTypes": [
+				"page"
+			]
+		},
+		{
+			"name": "blog-right-sidebar",
+			"title": "Blog (Right Sidebar)",
+			"postTypes": [
+				"page"
+			]
+		}
+	]
 }

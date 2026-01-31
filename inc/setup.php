@@ -63,6 +63,9 @@ final class Blockbiva_Setup
             'flex-height' => true,
         ));
 
+        // Add support for site icon (favicon).
+        add_theme_support('site-icon');
+
         // Switch default core markup to output valid HTML5.
         add_theme_support('html5', array(
             'search-form',

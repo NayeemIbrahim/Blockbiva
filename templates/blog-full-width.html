@@ -1,0 +1,60 @@
+<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+
+<!-- wp:group {"tagName":"main","align":"full","layout":{"type":"constrained"}} -->
+<main class="wp-block-group alignfull">
+    <!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80"}},"color":{"background":"var:preset|color|surface-variation"}},"layout":{"type":"constrained"}} -->
+    <div class="wp-block-group alignfull has-background"
+        style="background-color:var(--wp--preset--color--surface-variation);padding-top:var(--wp--preset--spacing--80);padding-bottom:var(--wp--preset--spacing--80)">
+        <!-- wp:heading {"textAlign":"center","level":1,"style":{"typography":{"fontWeight":"900","fontSize":"var:preset|font-size|jumbo"}}} -->
+        <h1 class="wp-block-heading has-text-align-center"
+            style="font-size:var(--wp--preset--font-size--jumbo);font-weight:900">Blog (Full Width)</h1>
+        <!-- /wp:heading -->
+        <!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"1.25rem"}},"className":"has-neutral-dark-color"} -->
+        <p class="has-text-align-center has-neutral-dark-color" style="font-size:1.25rem">A focused reading experience
+            without distractions.</p>
+        <!-- /wp:paragraph -->
+    </div>
+    <!-- /wp:group -->
+
+    <!-- wp:group {"align":"wide","style":{"spacing":{"margin":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|80"}}},"layout":{"type":"constrained","contentSize":"1000px"}} -->
+    <div class="wp-block-group alignwide"
+        style="margin-top:var(--wp--preset--spacing--60);margin-bottom:var(--wp--preset--spacing--80)">
+
+        <!-- wp:query {"queryId":2,"query":{"perPage":6,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true}} -->
+        <div class="wp-block-query">
+            <!-- wp:post-template {"style":{"spacing":{"blockGap":"60px"}}} -->
+            <!-- wp:group {"style":{"spacing":{"margin":{"bottom":"4rem"}}},"layout":{"type":"constrained"}} -->
+            <div class="wp-block-group" style="margin-bottom:4rem">
+                <!-- wp:post-featured-image {"isLink":true,"aspectRatio":"16/9","style":{"border":{"radius":"24px"}}} /-->
+
+                <!-- wp:spacer {"height":"var:preset|spacing|30"} -->
+                <div style="height:var(--wp--preset--spacing--30)" aria-hidden="true" class="wp-block-spacer"></div>
+                <!-- /wp:spacer -->
+
+                <!-- wp:post-date {"style":{"typography":{"fontSize":"0.75rem","textTransform":"uppercase","fontWeight":"700"}},"color":{"text":"var:preset|color|primary"}} /-->
+
+                <!-- wp:post-title {"isLink":true,"style":{"spacing":{"margin":{"top":"10px","bottom":"20px"}},"typography":{"fontSize":"2.5rem","fontWeight":"900"}}} /-->
+
+                <!-- wp:post-excerpt {"moreText":"Continue Reading","style":{"typography":{"fontSize":"1.125rem","lineHeight":"1.7"}}} /-->
+
+                <!-- wp:separator {"className":"is-style-wide","style":{"spacing":{"margin":{"top":"3rem"}}}} -->
+                <hr class="wp-block-separator has-alpha-channel-opacity is-style-wide" style="margin-top:3rem" />
+                <!-- /wp:separator -->
+            </div>
+            <!-- /wp:group -->
+            <!-- /wp:post-template -->
+
+            <!-- wp:query-pagination {"layout":{"type":"flex","justifyContent":"center","flexWrap":"nowrap"}} -->
+            <!-- wp:query-pagination-previous /-->
+            <!-- wp:query-pagination-numbers /-->
+            <!-- wp:query-pagination-next /-->
+            <!-- /wp:query-pagination -->
+        </div>
+        <!-- /wp:query -->
+
+    </div>
+    <!-- /wp:group -->
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->

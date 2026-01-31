@@ -1,4 +1,4 @@
-.premium-range-control {
+.blockbiva-range-control {
     margin-bottom: 25px;
     padding: 15px;
     background: #ffffff;
@@ -7,25 +7,25 @@
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
-.premium-range-header {
+.blockbiva-range-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 15px;
 }
 
-.premium-range-title {
+.blockbiva-range-title {
     font-weight: 700;
     font-size: 14px;
     color: #334155;
 }
 
-.premium-responsive-toggle {
+.blockbiva-responsive-toggle {
     display: flex;
     gap: 6px;
 }
 
-.premium-responsive-toggle button {
+.blockbiva-responsive-toggle button {
     background: #f8fafc;
     border: 1px solid #e2e8f0;
     border-radius: 6px;
@@ -40,34 +40,34 @@
     height: 32px;
 }
 
-.premium-responsive-toggle button:hover {
+.blockbiva-responsive-toggle button:hover {
     background: #f1f5f9;
     color: #475569;
 }
 
-.premium-responsive-toggle button.active {
+.blockbiva-responsive-toggle button.active {
     background: #4f46e5;
     color: #ffffff;
     border-color: #4f46e5;
     box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.2);
 }
 
-.premium-range-field {
+.blockbiva-range-field {
     display: none;
 }
 
-.premium-range-field.active {
+.blockbiva-range-field.active {
     display: block;
 }
 
-.premium-range-input-wrapper {
+.blockbiva-range-input-wrapper {
     display: flex;
     align-items: center;
     gap: 15px;
 }
 
 /* Custom Range Input */
-.premium-range-input-wrapper input[type="range"] {
+.blockbiva-range-input-wrapper input[type="range"] {
     flex: 1;
     -webkit-appearance: none;
     height: 4px;
@@ -76,7 +76,7 @@
     outline: none;
 }
 
-.premium-range-input-wrapper input[type="range"]::-webkit-slider-thumb {
+.blockbiva-range-input-wrapper input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
     width: 18px;
     height: 18px;
@@ -88,12 +88,12 @@
     transition: transform 0.1s ease;
 }
 
-.premium-range-input-wrapper input[type="range"]::-webkit-slider-thumb:hover {
+.blockbiva-range-input-wrapper input[type="range"]::-webkit-slider-thumb:hover {
     transform: scale(1.1);
 }
 
 /* Number Input Box */
-.premium-range-number-unit {
+.blockbiva-range-number-unit {
     display: flex;
     align-items: center;
     background: #f8fafc;
@@ -103,7 +103,7 @@
     width: 90px;
 }
 
-.premium-range-number-unit input[type="number"] {
+.blockbiva-range-number-unit input[type="number"] {
     width: 55px;
     border: none !important;
     background: transparent;
@@ -115,13 +115,13 @@
     -moz-appearance: textfield;
 }
 
-.premium-range-number-unit input[type="number"]::-webkit-inner-spin-button,
-.premium-range-number-unit input[type="number"]::-webkit-outer-spin-button {
+.blockbiva-range-number-unit input[type="number"]::-webkit-inner-spin-button,
+.blockbiva-range-number-unit input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
 
-.premium-range-number-unit .unit {
+.blockbiva-range-number-unit .unit {
     background: #f1f5f9;
     color: #64748b;
     font-size: 10px;
@@ -132,6 +132,12 @@
     text-align: center;
     border-left: 1px solid #e2e8f0;
 }
+
+.blockbiva-range-input-wrapper input[type="range"] {
+    flex: 1;
+    margin: 0;
+}
+
 
 .customize-control-description {
     margin-top: 12px;
