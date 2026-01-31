@@ -109,7 +109,7 @@ class Blockbiva_Customizer
     public function __construct()
     {
         add_action('customize_register', array($this, 'register_settings'));
-        add_action('wp_head', array($this, 'render_dynamic_css'), 100);
+        add_action('wp_enqueue_scripts', array($this, 'render_dynamic_css'), 99);
         add_action('wp_footer', array($this, 'render_scroll_to_top'));
         add_action('customize_controls_enqueue_scripts', array($this, 'enqueue_customizer_assets'));
     }
@@ -721,6 +721,77 @@ class Blockbiva_Customizer
             'section' => 'blockbiva_scroll_settings',
             'settings' => 'scroll_to_top_color',
         )));
+
+        // Setting: Size
+        $wp_customize->add_setting('scroll_to_top_size', array(
+            'default' => 50,
+            'sanitize_callback' => 'absint',
+            'transport' => 'refresh',
+        ));
+
+        $wp_customize->add_control(new Blockbiva_Range_Control($wp_customize, 'scroll_to_top_size_control', array(
+            'label' => esc_html__('Button Size (px)', 'blockbiva'),
+            'section' => 'blockbiva_scroll_settings',
+            'settings' => 'scroll_to_top_size',
+            'input_attrs' => array('min' => 30, 'max' => 80, 'step' => 1),
+        )));
+
+        // Setting: Border Radius
+        $wp_customize->add_setting('scroll_to_top_radius', array(
+            'default' => 12,
+            'sanitize_callback' => 'absint',
+            'transport' => 'refresh',
+        ));
+
+        $wp_customize->add_control(new Blockbiva_Range_Control($wp_customize, 'scroll_to_top_radius_control', array(
+            'label' => esc_html__('Border Radius (px)', 'blockbiva'),
+            'section' => 'blockbiva_scroll_settings',
+            'settings' => 'scroll_to_top_radius',
+            'input_attrs' => array('min' => 0, 'max' => 50, 'step' => 1),
+        )));
+
+        // Setting: Bottom Offset
+        $wp_customize->add_setting('scroll_to_top_bottom_offset', array(
+            'default' => 30,
+            'sanitize_callback' => 'absint',
+            'transport' => 'refresh',
+        ));
+
+        $wp_customize->add_control(new Blockbiva_Range_Control($wp_customize, 'scroll_to_top_bottom_offset_control', array(
+            'label' => esc_html__('Bottom Offset (px)', 'blockbiva'),
+            'section' => 'blockbiva_scroll_settings',
+            'settings' => 'scroll_to_top_bottom_offset',
+            'input_attrs' => array('min' => 10, 'max' => 200, 'step' => 1),
+        )));
+
+        // Setting: Side Offset
+        $wp_customize->add_setting('scroll_to_top_side_offset', array(
+            'default' => 30,
+            'sanitize_callback' => 'absint',
+            'transport' => 'refresh',
+        ));
+
+        $wp_customize->add_control(new Blockbiva_Range_Control($wp_customize, 'scroll_to_top_side_offset_control', array(
+            'label' => esc_html__('Side Offset (px)', 'blockbiva'),
+            'section' => 'blockbiva_scroll_settings',
+            'settings' => 'scroll_to_top_side_offset',
+            'input_attrs' => array('min' => 10, 'max' => 200, 'step' => 1),
+        )));
+
+        // Setting: Visibility Threshold
+        $wp_customize->add_setting('scroll_to_top_threshold', array(
+            'default' => 300,
+            'sanitize_callback' => 'absint',
+            'transport' => 'refresh',
+        ));
+
+        $wp_customize->add_control(new Blockbiva_Range_Control($wp_customize, 'scroll_to_top_threshold_control', array(
+            'label' => esc_html__('Scroll Threshold (px)', 'blockbiva'),
+            'description' => esc_html__('Distance scrolled before the button appears.', 'blockbiva'),
+            'section' => 'blockbiva_scroll_settings',
+            'settings' => 'scroll_to_top_threshold',
+            'input_attrs' => array('min' => 100, 'max' => 1000, 'step' => 50),
+        )));
     }
 
     /**
@@ -826,6 +897,10 @@ class Blockbiva_Customizer
                 /* Smooth Scroll Button */
                 --stt-color: {$stt_color} !important;
                 --stt-color-hover: " . $this->hex2rgba($stt_color, 0.8) . " !important;
+                --stt-size: " . get_theme_mod('scroll_to_top_size', 50) . "px !important;
+                --stt-radius: " . get_theme_mod('scroll_to_top_radius', 12) . "px !important;
+                --stt-bottom: " . get_theme_mod('scroll_to_top_bottom_offset', 30) . "px !important;
+                --stt-side: " . get_theme_mod('scroll_to_top_side_offset', 30) . "px !important;
             }
 
             body {
@@ -935,13 +1010,13 @@ class Blockbiva_Customizer
             $dynamic_css .= "
                 .blockbiva-scroll-to-top {
                     position: fixed;
-                    bottom: 30px;
-                    {$stt_pos}: 30px;
-                    width: 50px;
-                    height: 50px;
+                    bottom: var(--stt-bottom);
+                    {$stt_pos}: var(--stt-side);
+                    width: var(--stt-size);
+                    height: var(--stt-size);
                     background: var(--stt-color) !important;
                     color: #fff !important;
-                    border-radius: var(--radius-global) !important;
+                    border-radius: var(--stt-radius) !important;
                     display: flex;
                     align-items: center;
                     justify-content: center;
@@ -1024,7 +1099,7 @@ class Blockbiva_Customizer
 
         if (!empty($dynamic_css)) {
             // Enqueue the dynamic CSS properly
-            wp_add_inline_style('blockbiva-style', $dynamic_css);
+            wp_add_inline_style('blockbiva-main', $dynamic_css);
         }
 
     }

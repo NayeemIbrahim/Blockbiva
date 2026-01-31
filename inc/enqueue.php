@@ -66,6 +66,7 @@ class Blockbiva_Enqueue
         // 4. Localize Settings
         wp_localize_script('blockbiva-scripts', 'blockbivaSettings', array(
             'darkModeDefault' => get_theme_mod('dark_mode_default', false),
+            'scrollThreshold' => get_theme_mod('scroll_to_top_threshold', 300),
         ));
 
         // 5. Conditional scripts

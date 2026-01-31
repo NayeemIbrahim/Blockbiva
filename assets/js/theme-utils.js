@@ -12,12 +12,14 @@ document.addEventListener('DOMContentLoaded', function () {
     // Detect if auto-hide is enabled (based on transition property set via dynamic CSS)
     const isAutoHideEnabled = header && getComputedStyle(header).transitionProperty.includes('transform');
 
+    // 1. Back to Top Visibility
+    const threshold = (typeof blockbivaSettings !== 'undefined' && blockbivaSettings.scrollThreshold) ? parseInt(blockbivaSettings.scrollThreshold) : 300;
+    
     window.addEventListener('scroll', function () {
         const st = window.pageYOffset || document.documentElement.scrollTop;
 
-        // 1. Back to Top Visibility
         if (scrollTopBtn) {
-            if (st > 300) {
+            if (st > threshold) {
                 scrollTopBtn.classList.add('is-visible');
             } else {
                 scrollTopBtn.classList.remove('is-visible');
