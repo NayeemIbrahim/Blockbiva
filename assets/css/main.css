@@ -314,21 +314,15 @@ body.is-dark-theme .wp-block-template-part-header {
 }
 
 footer,
-footer.wp-block-group,
-footer.alignfull,
 .wp-block-template-part-footer {
     grid-row: 3;
     margin-top: auto;
-    padding: 0 !important;
-    border-top: none !important;
-    background-color: transparent !important;
-    transition: all .3s ease
+    border-top: none;
+    transition: all .3s ease;
 }
 
-body.is-dark-theme footer,
 body.is-dark-theme .wp-block-template-part-footer {
-    background-color: rgba(30, 41, 59, .5);
-    border-top-color: hsla(0, 0%, 100%, .05)
+    border-top-color: hsla(0, 0%, 100%, .05);
 }
 
 /* Custom Footer List Styling */
@@ -352,40 +346,40 @@ footer .wp-block-list-item {
 
 footer li a,
 footer .wp-block-list-item a {
-    color: var(--wp--preset--color--neutral-dark, #334155) !important;
-    font-weight: 500 !important;
-    font-size: 0.95rem !important;
-    transition: color 0.2s ease !important;
+    color: var(--wp--preset--color--neutral-dark, #334155);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
 }
 
 footer li a:hover,
 footer .wp-block-list-item a:hover {
-    color: var(--wp--preset--color--primary) !important;
-    text-decoration: none !important;
+    color: var(--wp--preset--color--primary);
+    text-decoration: none;
 }
 
 body.is-dark-theme footer li a,
 body.is-dark-theme footer .wp-block-list-item a {
-    color: var(--wp--preset--color--neutral-dark, #cbd5e1) !important;
+    color: var(--wp--preset--color--neutral-dark, #cbd5e1);
 }
 
 body.is-dark-theme footer li a:hover,
 body.is-dark-theme footer .wp-block-list-item a:hover {
-    color: var(--wp--preset--color--secondary) !important;
+    color: var(--wp--preset--color--secondary);
 }
 
 /* Footer paragraphs and text */
 footer p,
 footer span,
 footer .blockbiva-copyright {
-    color: var(--wp--preset--color--neutral-dark, #475569) !important;
-    font-size: 0.9rem !important;
+    color: var(--wp--preset--color--neutral-dark, #475569);
+    font-size: 0.9rem;
 }
 
 body.is-dark-theme footer p,
 body.is-dark-theme footer span,
 body.is-dark-theme footer .blockbiva-copyright {
-    color: var(--wp--preset--color--neutral-dark, #cbd5e1) !important;
+    color: var(--wp--preset--color--neutral-dark, #cbd5e1);
 }
 
 .wp-site-blocks {
