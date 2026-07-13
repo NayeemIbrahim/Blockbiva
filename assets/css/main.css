@@ -1747,11 +1747,20 @@ main > :last-child > :last-child > :last-child {
 /* --- Pricing Section Styles --- */
 .blockbiva-pricing-section {
     background-color: var(--wp--preset--color--surface-variation) !important;
+    padding-top: var(--wp--preset--spacing--80) !important;
+    padding-bottom: var(--wp--preset--spacing--80) !important;
+}
+
+.blockbiva-pricing-header {
+    margin-bottom: var(--wp--preset--spacing--50) !important;
+    text-align: center;
 }
 
 .blockbiva-pricing-card {
     background-color: var(--wp--preset--color--base) !important;
-    border-color: rgba(0, 0, 0, 0.08) !important;
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
+    border-radius: 16px !important;
+    padding: 40px 30px !important;
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.02) !important;
 }
@@ -1763,7 +1772,7 @@ main > :last-child > :last-child > :last-child {
 }
 
 .blockbiva-pricing-card.is-popular {
-    border-color: var(--wp--preset--color--primary) !important;
+    border: 2px solid var(--wp--preset--color--primary) !important;
     position: relative;
     box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.05), 0 4px 6px -2px rgba(99, 102, 241, 0.02) !important;
 }
@@ -1773,6 +1782,58 @@ main > :last-child > :last-child > :last-child {
     box-shadow: 0 20px 25px -5px rgba(99, 102, 241, 0.1), 0 10px 10px -5px rgba(99, 102, 241, 0.04) !important;
 }
 
+.blockbiva-pricing-card h3 {
+    font-size: 1.5rem !important;
+    font-weight: 700 !important;
+    margin-bottom: 10px !important;
+}
+
+.blockbiva-pricing-card p {
+    font-size: 0.95rem !important;
+    color: var(--wp--preset--color--neutral-dark) !important;
+    margin-bottom: 20px !important;
+}
+
+.blockbiva-pricing-card .blockbiva-card-price {
+    font-size: 2.5rem !important;
+    font-weight: 800 !important;
+    margin: 20px 0 !important;
+    color: var(--wp--preset--color--contrast) !important;
+}
+
+.blockbiva-pricing-card .blockbiva-card-price span {
+    font-size: 1rem !important;
+    font-weight: 400 !important;
+    color: var(--wp--preset--color--neutral-dark) !important;
+}
+
+.blockbiva-pricing-card .wp-block-buttons {
+    margin-bottom: 30px !important;
+}
+
+.blockbiva-pricing-card .wp-block-button__link {
+    width: 100% !important;
+    text-align: center !important;
+    justify-content: center !important;
+}
+
+.blockbiva-pricing-card ul {
+    list-style-type: none !important;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+}
+
+.blockbiva-pricing-card li {
+    margin-bottom: 10px !important;
+    font-size: 0.95rem !important;
+    color: var(--wp--preset--color--contrast) !important;
+}
+
+.blockbiva-pricing-card li.line-through {
+    color: var(--wp--preset--color--neutral-medium) !important;
+    text-decoration: line-through !important;
+}
+
 body.is-dark-theme .blockbiva-pricing-card {
     border-color: rgba(255, 255, 255, 0.06) !important;
 }
@@ -1780,16 +1841,42 @@ body.is-dark-theme .blockbiva-pricing-card {
 /* --- FAQ Section Styles --- */
 .blockbiva-faq-section {
     background-color: var(--wp--preset--color--base) !important;
+    padding-top: var(--wp--preset--spacing--80) !important;
+    padding-bottom: var(--wp--preset--spacing--80) !important;
+}
+
+.blockbiva-faq-header {
+    margin-bottom: var(--wp--preset--spacing--50) !important;
+    text-align: center;
+}
+
+.blockbiva-faq-container {
+    max-width: 850px !important;
+    margin: 0 auto !important;
 }
 
 .blockbiva-faq-item {
     background-color: var(--wp--preset--color--surface-variation) !important;
-    border-color: rgba(0, 0, 0, 0.06) !important;
+    border: 1px solid rgba(0, 0, 0, 0.06) !important;
+    border-radius: 12px !important;
+    padding: 24px !important;
+    margin-bottom: 16px !important;
     transition: all 0.2s ease !important;
 }
 
 .blockbiva-faq-item:hover {
     border-color: rgba(99, 102, 241, 0.3) !important;
+}
+
+.blockbiva-faq-item h4 {
+    font-size: 1.2rem !important;
+    font-weight: 700 !important;
+    margin-bottom: 10px !important;
+}
+
+.blockbiva-faq-item p {
+    margin-bottom: 0 !important;
+    color: var(--wp--preset--color--neutral-dark) !important;
 }
 
 body.is-dark-theme .blockbiva-faq-item {

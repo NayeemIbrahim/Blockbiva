@@ -5,51 +5,51 @@
 
     <!-- wp:pattern {"slug":"blockbiva/page-business-home"} /-->
 
-    <!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80"}}},"layout":{"type":"constrained"},"className":"blockbiva-pricing-section"} -->
-    <div class="wp-block-group alignfull blockbiva-pricing-section" style="padding-top:var(--wp--preset--spacing--80);padding-bottom:var(--wp--preset--spacing--80)">
+    <!-- wp:group {"align":"full","className":"blockbiva-pricing-section"} -->
+    <div class="wp-block-group alignfull blockbiva-pricing-section">
         
-        <!-- wp:group {"layout":{"type":"constrained","contentSize":"800px"},"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|50"}}}} -->
-        <div class="wp-block-group" style="margin-bottom:var(--wp--preset--spacing--50)">
-            <!-- wp:heading {"level":6,"textAlign":"center","style":{"typography":{"fontWeight":"700","letterSpacing":"0.05em","textTransform":"uppercase"}}} -->
-            <h6 class="wp-block-heading has-text-align-center" style="font-weight:700;letter-spacing:0.05em;text-transform:uppercase">Pricing Plans</h6>
+        <!-- wp:group {"className":"blockbiva-pricing-header"} -->
+        <div class="wp-block-group blockbiva-pricing-header">
+            <!-- wp:heading {"level":6,"textAlign":"center"} -->
+            <h6 class="wp-block-heading has-text-align-center">Pricing Plans</h6>
             <!-- /wp:heading -->
 
-            <!-- wp:heading {"level":2,"textAlign":"center","style":{"typography":{"fontSize":"clamp(2rem, 4vw, 3rem)","fontWeight":"900","lineHeight":"1.2"}}} -->
-            <h2 class="wp-block-heading has-text-align-center" style="font-size:clamp(2rem, 4vw, 3rem);font-weight:900;line-height:1.2">Simple, transparent pricing.</h2>
+            <!-- wp:heading {"level":2,"textAlign":"center"} -->
+            <h2 class="wp-block-heading has-text-align-center">Simple, transparent pricing.</h2>
             <!-- /wp:heading -->
 
-            <!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"1.1rem"}},"textColor":"neutral-dark"} -->
-            <p class="has-text-align-center has-neutral-dark-color has-text-color" style="font-size:1.1rem">Choose the plan that fits your business needs. Cancel anytime.</p>
+            <!-- wp:paragraph {"align":"center"} -->
+            <p class="has-text-align-center">Choose the plan that fits your business needs. Cancel anytime.</p>
             <!-- /wp:paragraph -->
         </div>
         <!-- /wp:group -->
 
-        <!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"left":"var:preset|spacing|30"}}}} -->
+        <!-- wp:columns {"align":"wide"} -->
         <div class="wp-block-columns alignwide">
             
-            <!-- wp:column {"style":{"spacing":{"padding":{"top":"40px","bottom":"40px","left":"30px","right":"30px"}},"border":{"radius":"16px","width":"1px","style":"solid"}},"className":"blockbiva-pricing-card"} -->
-            <div class="wp-block-column blockbiva-pricing-card" style="border-style:solid;border-width:1px;border-radius:16px;padding-top:40px;padding-right:30px;padding-bottom:40px;padding-left:30px">
-                <!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"1.5rem","fontWeight":"700"}}} -->
-                <h3 class="wp-block-heading" style="font-size:1.5rem;font-weight:700">Starter</h3>
+            <!-- wp:column {"className":"blockbiva-pricing-card"} -->
+            <div class="wp-block-column blockbiva-pricing-card">
+                <!-- wp:heading {"level":3} -->
+                <h3 class="wp-block-heading">Starter</h3>
                 <!-- /wp:heading -->
 
-                <!-- wp:paragraph {"style":{"typography":{"fontSize":"0.95rem"}},"textColor":"neutral-dark"} -->
-                <p class="has-neutral-dark-color has-text-color" style="font-size:0.95rem">For individuals and side projects.</p>
+                <!-- wp:paragraph -->
+                <p>For individuals and side projects.</p>
                 <!-- /wp:paragraph -->
 
-                <!-- wp:paragraph {"style":{"typography":{"fontSize":"2.5rem","fontWeight":"800"}}} -->
-                <p style="font-size:2.5rem;font-weight:800">$29<span style="font-size:1rem;font-weight:400;color:var(--wp--preset--color--neutral-dark)">/mo</span></p>
+                <!-- wp:paragraph {"className":"blockbiva-card-price"} -->
+                <p class="blockbiva-card-price">$29<span>/mo</span></p>
                 <!-- /wp:paragraph -->
 
-                <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"left"}} -->
+                <!-- wp:buttons -->
                 <div class="wp-block-buttons">
-                    <!-- wp:button {"className":"is-style-outline","style":{"border":{"radius":"999px"}}} -->
-                    <div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" style="border-radius:999px">Get Started</a></div>
+                    <!-- wp:button {"className":"is-style-outline"} -->
+                    <div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button">Get Started</a></div>
                     <!-- /wp:button -->
                 </div>
                 <!-- /wp:buttons -->
 
-                <!-- wp:list {"className":"is-style-no-disc","style":{"spacing":{"padding":{"left":"0"}}}} -->
+                <!-- wp:list {"className":"is-style-no-disc"} -->
                 <ul class="is-style-no-disc wp-block-list">
                     <!-- wp:list-item -->
                     <li>✓ 5 Projects</li>
@@ -60,41 +60,41 @@
                     <!-- wp:list-item -->
                     <li>✓ 24/7 Email Support</li>
                     <!-- /wp:list-item -->
-                    <!-- wp:list-item {"style":{"color":{"text":"var:preset|color|neutral-medium"}}} -->
-                    <li style="color:var(--wp--preset--color--neutral-medium);text-decoration:line-through">Custom Domain</li>
+                    <!-- wp:list-item {"className":"line-through"} -->
+                    <li class="line-through">Custom Domain</li>
                     <!-- /wp:list-item -->
                 </ul>
                 <!-- /wp:list -->
             </div>
             <!-- /wp:column -->
 
-            <!-- wp:column {"style":{"spacing":{"padding":{"top":"40px","bottom":"40px","left":"30px","right":"30px"}},"border":{"radius":"16px","width":"2px","style":"solid"}},"className":"blockbiva-pricing-card is-popular"} -->
-            <div class="wp-block-column blockbiva-pricing-card is-popular" style="border-style:solid;border-width:2px;border-radius:16px;padding-top:40px;padding-right:30px;padding-bottom:40px;padding-left:30px">
-                <!-- wp:paragraph {"style":{"typography":{"fontSize":"0.75rem","fontWeight":"700","letterSpacing":"0.05em","textTransform":"uppercase"}},"backgroundColor":"primary","textColor":"base","className":"blockbiva-popular-badge"} -->
-                <p class="blockbiva-popular-badge has-base-color has-primary-background-color has-text-color has-background" style="font-size:0.75rem;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;display:inline-block;padding:4px 12px;border-radius:999px;margin-bottom:15px">Most Popular</p>
+            <!-- wp:column {"className":"blockbiva-pricing-card is-popular"} -->
+            <div class="wp-block-column blockbiva-pricing-card is-popular">
+                <!-- wp:paragraph {"className":"blockbiva-popular-badge"} -->
+                <p class="blockbiva-popular-badge">Most Popular</p>
                 <!-- /wp:paragraph -->
 
-                <!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"1.5rem","fontWeight":"700"}}} -->
-                <h3 class="wp-block-heading" style="font-size:1.5rem;font-weight:700">Pro</h3>
+                <!-- wp:heading {"level":3} -->
+                <h3 class="wp-block-heading">Pro</h3>
                 <!-- /wp:heading -->
 
-                <!-- wp:paragraph {"style":{"typography":{"fontSize":"0.95rem"}},"textColor":"neutral-dark"} -->
-                <p class="has-neutral-dark-color has-text-color" style="font-size:0.95rem">For growing startups and small teams.</p>
+                <!-- wp:paragraph -->
+                <p>For growing startups and small teams.</p>
                 <!-- /wp:paragraph -->
 
-                <!-- wp:paragraph {"style":{"typography":{"fontSize":"2.5rem","fontWeight":"800"}}} -->
-                <p style="font-size:2.5rem;font-weight:800">$79<span style="font-size:1rem;font-weight:400;color:var(--wp--preset--color--neutral-dark)">/mo</span></p>
+                <!-- wp:paragraph {"className":"blockbiva-card-price"} -->
+                <p class="blockbiva-card-price">$79<span>/mo</span></p>
                 <!-- /wp:paragraph -->
 
-                <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"left"}} -->
+                <!-- wp:buttons -->
                 <div class="wp-block-buttons">
-                    <!-- wp:button {"className":"is-style-fill","style":{"border":{"radius":"999px"}}} -->
-                    <div class="wp-block-button is-style-fill"><a class="wp-block-button__link wp-element-button" style="border-radius:999px">Start Free Trial</a></div>
+                    <!-- wp:button {"className":"is-style-fill"} -->
+                    <div class="wp-block-button is-style-fill"><a class="wp-block-button__link wp-element-button">Start Free Trial</a></div>
                     <!-- /wp:button -->
                 </div>
                 <!-- /wp:buttons -->
 
-                <!-- wp:list {"className":"is-style-no-disc","style":{"spacing":{"padding":{"left":"0"}}}} -->
+                <!-- wp:list {"className":"is-style-no-disc"} -->
                 <ul class="is-style-no-disc wp-block-list">
                     <!-- wp:list-item -->
                     <li>✓ Unlimited Projects</li>
@@ -113,29 +113,29 @@
             </div>
             <!-- /wp:column -->
 
-            <!-- wp:column {"style":{"spacing":{"padding":{"top":"40px","bottom":"40px","left":"30px","right":"30px"}},"border":{"radius":"16px","width":"1px","style":"solid"}},"className":"blockbiva-pricing-card"} -->
-            <div class="wp-block-column blockbiva-pricing-card" style="border-style:solid;border-width:1px;border-radius:16px;padding-top:40px;padding-right:30px;padding-bottom:40px;padding-left:30px">
-                <!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"1.5rem","fontWeight":"700"}}} -->
-                <h3 class="wp-block-heading" style="font-size:1.5rem;font-weight:700">Enterprise</h3>
+            <!-- wp:column {"className":"blockbiva-pricing-card"} -->
+            <div class="wp-block-column blockbiva-pricing-card">
+                <!-- wp:heading {"level":3} -->
+                <h3 class="wp-block-heading">Enterprise</h3>
                 <!-- /wp:heading -->
 
-                <!-- wp:paragraph {"style":{"typography":{"fontSize":"0.95rem"}},"textColor":"neutral-dark"} -->
-                <p class="has-neutral-dark-color has-text-color" style="font-size:0.95rem">For large-scale organisations.</p>
+                <!-- wp:paragraph -->
+                <p>For large-scale organisations.</p>
                 <!-- /wp:paragraph -->
 
-                <!-- wp:paragraph {"style":{"typography":{"fontSize":"2.5rem","fontWeight":"800"}}} -->
-                <p style="font-size:2.5rem;font-weight:800">$149<span style="font-size:1rem;font-weight:400;color:var(--wp--preset--color--neutral-dark)">/mo</span></p>
+                <!-- wp:paragraph {"className":"blockbiva-card-price"} -->
+                <p class="blockbiva-card-price">$149<span>/mo</span></p>
                 <!-- /wp:paragraph -->
 
-                <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"left"}} -->
+                <!-- wp:buttons -->
                 <div class="wp-block-buttons">
-                    <!-- wp:button {"className":"is-style-outline","style":{"border":{"radius":"999px"}}} -->
-                    <div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" style="border-radius:999px">Contact Sales</a></div>
+                    <!-- wp:button {"className":"is-style-outline"} -->
+                    <div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button">Contact Sales</a></div>
                     <!-- /wp:button -->
                 </div>
                 <!-- /wp:buttons -->
 
-                <!-- wp:list {"className":"is-style-no-disc","style":{"spacing":{"padding":{"left":"0"}}}} -->
+                <!-- wp:list {"className":"is-style-no-disc"} -->
                 <ul class="is-style-no-disc wp-block-list">
                     <!-- wp:list-item -->
                     <li>✓ Everything in Pro</li>
@@ -160,60 +160,60 @@
     </div>
     <!-- /wp:group -->
 
-    <!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80"}}},"layout":{"type":"constrained"},"className":"blockbiva-faq-section"} -->
-    <div class="wp-block-group alignfull blockbiva-faq-section" style="padding-top:var(--wp--preset--spacing--80);padding-bottom:var(--wp--preset--spacing--80)">
+    <!-- wp:group {"align":"full","className":"blockbiva-faq-section"} -->
+    <div class="wp-block-group alignfull blockbiva-faq-section">
         
-        <!-- wp:group {"layout":{"type":"constrained","contentSize":"800px"},"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|50"}}}} -->
-        <div class="wp-block-group" style="margin-bottom:var(--wp--preset--spacing--50)">
-            <!-- wp:heading {"level":6,"textAlign":"center","style":{"typography":{"fontWeight":"700","letterSpacing":"0.05em","textTransform":"uppercase"}}} -->
-            <h6 class="wp-block-heading has-text-align-center" style="font-weight:700;letter-spacing:0.05em;text-transform:uppercase">FAQ</h6>
+        <!-- wp:group {"className":"blockbiva-faq-header"} -->
+        <div class="wp-block-group blockbiva-faq-header">
+            <!-- wp:heading {"level":6,"textAlign":"center"} -->
+            <h6 class="wp-block-heading has-text-align-center">FAQ</h6>
             <!-- /wp:heading -->
 
-            <!-- wp:heading {"level":2,"textAlign":"center","style":{"typography":{"fontSize":"clamp(2rem, 4vw, 3rem)","fontWeight":"900","lineHeight":"1.2"}}} -->
-            <h2 class="wp-block-heading has-text-align-center" style="font-size:clamp(2rem, 4vw, 3rem);font-weight:900;line-height:1.2">Frequently Asked Questions</h2>
+            <!-- wp:heading {"level":2,"textAlign":"center"} -->
+            <h2 class="wp-block-heading has-text-align-center">Frequently Asked Questions</h2>
             <!-- /wp:heading -->
 
-            <!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"1.1rem"}},"textColor":"neutral-dark"} -->
-            <p class="has-text-align-center has-neutral-dark-color has-text-color" style="font-size:1.1rem">Have questions about Blockbiva Pro? Find your answers here.</p>
+            <!-- wp:paragraph {"align":"center"} -->
+            <p class="has-text-align-center">Have questions about Blockbiva Pro? Find your answers here.</p>
             <!-- /wp:paragraph -->
         </div>
         <!-- /wp:group -->
 
-        <!-- wp:group {"layout":{"type":"constrained","contentSize":"850px"}} -->
-        <div class="wp-block-group">
+        <!-- wp:group {"className":"blockbiva-faq-container"} -->
+        <div class="wp-block-group blockbiva-faq-container">
             
-            <!-- wp:group {"className":"blockbiva-faq-item","style":{"spacing":{"padding":{"top":"24px","bottom":"24px","left":"24px","right":"24px"}},"border":{"radius":"12px","width":"1px","style":"solid"}}} -->
-            <div class="wp-block-group blockbiva-faq-item" style="border-style:solid;border-width:1px;border-radius:12px;padding-top:24px;padding-right:24px;padding-bottom:24px;padding-left:24px;margin-bottom:16px">
-                <!-- wp:heading {"level":4,"style":{"typography":{"fontSize":"1.2rem","fontWeight":"700"}}} -->
-                <h4 class="wp-block-heading" style="font-size:1.2rem;font-weight:700">What is Blockbiva Pro?</h4>
+            <!-- wp:group {"className":"blockbiva-faq-item"} -->
+            <div class="wp-block-group blockbiva-faq-item">
+                <!-- wp:heading {"level":4} -->
+                <h4 class="wp-block-heading">What is Blockbiva Pro?</h4>
                 <!-- /wp:heading -->
 
-                <!-- wp:paragraph {"textColor":"neutral-dark"} -->
-                <p class="has-neutral-dark-color has-text-color">Blockbiva Pro is a next-generation Full Site Editing (FSE) WordPress theme built for startups, SaaS platforms, and agency websites. It features a complete range of block templates and design options.</p>
+                <!-- wp:paragraph -->
+                <p>Blockbiva Pro is a next-generation Full Site Editing (FSE) WordPress theme built for startups, SaaS platforms, and agency websites. It features a complete range of block templates and design options.</p>
                 <!-- /wp:paragraph -->
             </div>
             <!-- /wp:group -->
 
-            <!-- wp:group {"className":"blockbiva-faq-item","style":{"spacing":{"padding":{"top":"24px","bottom":"24px","left":"24px","right":"24px"}},"border":{"radius":"12px","width":"1px","style":"solid"}}} -->
-            <div class="wp-block-group blockbiva-faq-item" style="border-style:solid;border-width:1px;border-radius:12px;padding-top:24px;padding-right:24px;padding-bottom:24px;padding-left:24px;margin-bottom:16px">
-                <!-- wp:heading {"level":4,"style":{"typography":{"fontSize":"1.2rem","fontWeight":"700"}}} -->
-                <h4 class="wp-block-heading" style="font-size:1.2rem;font-weight:700">Do I need a page builder?</h4>
+            <!-- wp:group {"className":"blockbiva-faq-item"} -->
+            <div class="wp-block-group blockbiva-faq-item">
+                <!-- wp:heading {"level":4} -->
+                <h4 class="wp-block-heading">Do I need a page builder?</h4>
                 <!-- /wp:heading -->
 
-                <!-- wp:paragraph {"textColor":"neutral-dark"} -->
-                <p class="has-neutral-dark-color has-text-color">No! Blockbiva is a pure block theme that works entirely with the native Gutenberg WordPress Editor, allowing you to edit all sections, headers, and footers directly without coding.</p>
+                <!-- wp:paragraph -->
+                <p>No! Blockbiva is a pure block theme that works entirely with the native Gutenberg WordPress Editor, allowing you to edit all sections, headers, and footers directly without coding.</p>
                 <!-- /wp:paragraph -->
             </div>
             <!-- /wp:group -->
 
-            <!-- wp:group {"className":"blockbiva-faq-item","style":{"spacing":{"padding":{"top":"24px","bottom":"24px","left":"24px","right":"24px"}},"border":{"radius":"12px","width":"1px","style":"solid"}}} -->
-            <div class="wp-block-group blockbiva-faq-item" style="border-style:solid;border-width:1px;border-radius:12px;padding-top:24px;padding-right:24px;padding-bottom:24px;padding-left:24px;margin-bottom:16px">
-                <!-- wp:heading {"level":4,"style":{"typography":{"fontSize":"1.2rem","fontWeight":"700"}}} -->
-                <h4 class="wp-block-heading" style="font-size:1.2rem;font-weight:700">Can I cancel my plan anytime?</h4>
+            <!-- wp:group {"className":"blockbiva-faq-item"} -->
+            <div class="wp-block-group blockbiva-faq-item">
+                <!-- wp:heading {"level":4} -->
+                <h4 class="wp-block-heading">Can I cancel my plan anytime?</h4>
                 <!-- /wp:heading -->
 
-                <!-- wp:paragraph {"textColor":"neutral-dark"} -->
-                <p class="has-neutral-dark-color has-text-color">Yes, absolutely. There are no contracts, and you can cancel or change your plan at any time directly from your account settings.</p>
+                <!-- wp:paragraph -->
+                <p>Yes, absolutely. There are no contracts, and you can cancel or change your plan at any time directly from your account settings.</p>
                 <!-- /wp:paragraph -->
             </div>
             <!-- /wp:group -->
