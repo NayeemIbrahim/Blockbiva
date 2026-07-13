@@ -41,14 +41,27 @@ function blockbiva_after_import_setup()
         'primary' => $main_menu ? $main_menu->term_id : null,
     ));
 
-    // Assign front page and posts page (blog).
-    $front_page_id = get_page_by_title('Home');
-    $blog_page_id = get_page_by_title('Blog');
+    // Assign front page and posts page (blog) using WP_Query (get_page_by_title deprecated in WP 6.2).
+    $front_query = new WP_Query(array(
+        'post_type'      => 'page',
+        'title'          => 'Home',
+        'posts_per_page' => 1,
+        'fields'         => 'ids',
+    ));
+    $blog_query = new WP_Query(array(
+        'post_type'      => 'page',
+        'title'          => 'Blog',
+        'posts_per_page' => 1,
+        'fields'         => 'ids',
+    ));
+
+    $front_page_id = !empty($front_query->posts) ? $front_query->posts[0] : 0;
+    $blog_page_id  = !empty($blog_query->posts) ? $blog_query->posts[0] : 0;
 
     if ($front_page_id && $blog_page_id) {
         update_option('show_on_front', 'page');
-        update_option('page_on_front', $front_page_id->ID);
-        update_option('page_for_posts', $blog_page_id->ID);
+        update_option('page_on_front', $front_page_id);
+        update_option('page_for_posts', $blog_page_id);
     }
 }
 add_action('ocdi/after_import', 'blockbiva_after_import_setup');

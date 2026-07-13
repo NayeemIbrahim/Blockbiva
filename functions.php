@@ -12,7 +12,7 @@ if (!defined('ABSPATH')) {
 /**
  * Define Theme Constants
  */
-define('BLOCKBIVA_VERSION', '1.0.0');
+define('BLOCKBIVA_VERSION', '1.1.0');
 define('BLOCKBIVA_DIR', get_template_directory());
 define('BLOCKBIVA_URI', get_template_directory_uri());
 

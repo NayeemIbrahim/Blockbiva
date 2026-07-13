@@ -80,6 +80,7 @@ class Blockbiva_Helpers
      */
     public static function language_switcher()
     {
+        ob_start();
         if (function_exists('icl_get_languages')) {
             $languages = icl_get_languages('skip_missing=0');
             if (!empty($languages)) {
@@ -94,6 +95,7 @@ class Blockbiva_Helpers
             pll_the_languages(array('show_flags' => 1, 'show_names' => 0));
             echo '</ul>';
         }
+        return ob_get_clean();
     }
 }
 

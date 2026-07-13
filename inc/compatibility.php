@@ -19,9 +19,6 @@ class Blockbiva_Compatibility
     {
         // Breadcrumbs for SEO Plugins
         add_action('blockbiva_theme_breadcrumb', array($this, 'render_breadcrumbs'));
-
-        // Remove Emoji script (performance)
-        add_action('init', array($this, 'clean_up_wp'));
     }
 
     /**
@@ -35,17 +32,7 @@ class Blockbiva_Compatibility
             rank_math_the_breadcrumbs();
         }
     }
-
-    /**
-     * Clean up unnecessary WP core assets if not needed
-     */
-    public function clean_up_wp()
-    {
-        remove_action('wp_head', 'print_emoji_detection_script', 7);
-        remove_action('wp_print_styles', 'print_emoji_styles');
-        remove_action('admin_print_scripts', 'print_emoji_detection_script');
-        remove_action('admin_print_styles', 'print_emoji_styles');
-    }
 }
 
 new Blockbiva_Compatibility();
+

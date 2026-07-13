@@ -21,7 +21,22 @@
             <!-- wp:heading {"level":4,"style":{"typography":{"fontSize":"var:preset|font-size|medium"}}} -->
             <h4 class="wp-block-heading" style="font-size:var(--wp--preset--font-size--medium)">Company</h4>
             <!-- /wp:heading -->
-            <!-- wp:navigation {"overlayMenu":"never","layout":{"type":"flex","orientation":"vertical"},"ariaLabel":"Footer Company Menu"} /-->
+            <!-- wp:list {"className":"is-style-no-disc"} -->
+            <ul class="is-style-no-disc">
+                <!-- wp:list-item -->
+                <li class="wp-block-list-item"><a href="/">Home</a></li>
+                <!-- /wp:list-item -->
+                <!-- wp:list-item -->
+                <li class="wp-block-list-item"><a href="/services/">Services</a></li>
+                <!-- /wp:list-item -->
+                <!-- wp:list-item -->
+                <li class="wp-block-list-item"><a href="/about/">About</a></li>
+                <!-- /wp:list-item -->
+                <!-- wp:list-item -->
+                <li class="wp-block-list-item"><a href="/contact/">Contact</a></li>
+                <!-- /wp:list-item -->
+            </ul>
+            <!-- /wp:list -->
         </div>
         <!-- /wp:column -->
 
@@ -58,10 +73,10 @@
     <hr class="wp-block-separator has-alpha-channel-opacity is-style-wide" />
     <!-- /wp:separator -->
 
-    <!-- wp:group {"align":"wide","layout":{"type":"flex","justifyContent":"space-between"}} -->
-    <div class="wp-block-group alignwide">
-        <!-- wp:paragraph {"style":{"typography":{"fontSize":"var:preset|font-size|small"}}} -->
-        <p style="font-size:var(--wp--preset--font-size--small)">[blockbiva_copyright]</p>
+    <!-- wp:group {"align":"wide","layout":{"type":"flex","justifyContent":"center"}} -->
+    <div class="wp-block-group alignwide" style="justify-content:center">
+        <!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"var:preset|font-size|small"}}} -->
+        <p class="has-text-align-center" style="font-size:var(--wp--preset--font-size--small)">[blockbiva_copyright]</p>
         <!-- /wp:paragraph -->
     </div>
     <!-- /wp:group -->

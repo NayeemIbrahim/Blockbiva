@@ -80,6 +80,16 @@ h6 {
     letter-spacing: -0.02em
 }
 
+/* Ensure headings inside has-background sections preserve parent text color */
+.has-background h1,
+.has-background h2,
+.has-background h3,
+.has-background h4,
+.has-background h5,
+.has-background h6 {
+    color: inherit !important;
+}
+
 h1 {
     font-size: clamp(2.5rem, 5vw + 1rem, 4.5rem);
     letter-spacing: -0.03em;
@@ -114,7 +124,7 @@ h6 {
 p {
     margin-bottom: 1.5rem;
     line-height: 1.7;
-    color: var(--wp--preset--color--base-text);
+    color: var(--wp--preset--color--contrast);
     max-width: 65ch
 }
 
@@ -144,49 +154,59 @@ body {
     font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     line-height: 1.6;
     margin: 0;
-    transition: background-color .3s ease, color .3s ease
+    transition: background-color .3s ease, color .3s ease;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility
 }
 
 body.is-dark-theme {
     background-color: #0f172a;
     color: #f8fafc;
-    --wp--preset--color--base: #0f172a;
-    --wp--preset--color--contrast: #f8fafc;
-    --wp--preset--color--neutral-light: #1e293b;
-    --wp--preset--color--neutral-dark: #334155
+    --wp--preset--color--base: #0f172a !important;
+    --wp--preset--color--contrast: #f8fafc !important;
+    --wp--preset--color--neutral-light: #1e293b !important;
+    --wp--preset--color--neutral-medium: #64748b !important;
+    --wp--preset--color--neutral-dark: #cbd5e1 !important;
+    --wp--preset--color--surface-variation: #131b2e !important;
+    --menu-color: #f8fafc !important;
+    --menu-hover: var(--wp--preset--color--secondary) !important
 }
 
-.screen-reader-text {
-    border: 0;
-    clip: rect(1px, 1px, 1px, 1px);
-    clip-path: inset(50%);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-    word-wrap: normal !important
+/* Force header background to match body dark mode state */
+body.is-dark-theme header,
+body.is-dark-theme header.wp-block-group.alignfull,
+body.is-dark-theme .wp-block-template-part,
+body.is-dark-theme .blockbiva-header-container {
+    background-color: rgba(15, 23, 42, 0.85) !important;
 }
 
-.screen-reader-text:focus {
-    background-color: #f1f1f1;
-    border-radius: 3px;
-    box-shadow: 0 0 2px 2px rgba(0, 0, 0, .6);
-    clip: auto !important;
-    clip-path: none;
-    color: #21759b;
-    display: block;
-    font-size: .875rem;
-    font-weight: 700;
-    height: auto;
-    left: 5px;
-    line-height: normal;
-    padding: 15px 23px 14px;
-    text-decoration: none;
-    top: 5px;
-    width: auto;
-    z-index: 100000
+/* Light mode logo inversion filter (white logo on white header fix) */
+body:not(.is-dark-theme) .wp-block-site-logo img,
+body:not(.is-dark-theme) .custom-logo-link img {
+    filter: invert(1) contrast(5) brightness(0) !important;
+}
+
+/* Dark mode Search overrides */
+body.is-dark-theme .wp-block-search__input {
+    background-color: rgba(255, 255, 255, 0.08) !important;
+    color: #f8fafc !important;
+    border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+body.is-dark-theme .wp-block-search__button svg {
+    fill: #f8fafc !important;
+    color: #f8fafc !important;
+}
+
+/* Site Logo size fallback */
+.wp-block-site-logo img,
+.custom-logo-link img {
+    width: var(--logo-width, 120px) !important;
+    min-width: 120px !important;
+    max-width: 100% !important;
+    height: auto !important;
+    display: block !important;
 }
 
 .skip-link.screen-reader-text:focus {
@@ -201,8 +221,13 @@ body.is-dark-theme {
 }
 
 header,
-.site-header,
-.wp-block-template-part-header {
+header.wp-block-group,
+header.alignfull,
+header.wp-block-group.alignfull,
+.wp-block-template-part-header,
+.wp-block-template-part-header header,
+.wp-block-template-part header.wp-block-group.alignfull,
+.site-header {
     position: sticky !important;
     top: 0 !important;
     z-index: 9999 !important;
@@ -211,17 +236,24 @@ header,
     -webkit-backdrop-filter: blur(15px) saturate(200%) !important;
     border-bottom: 1px solid rgba(0, 0, 0, .05) !important;
     transition: all .4s cubic-bezier(0.16, 1, 0.3, 1);
-    padding-top: var(--header-padding, 15px) !important;
-    padding-bottom: var(--header-padding, 15px) !important;
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
     min-height: auto !important
+}
+
+header.wp-block-group > *,
+header.alignfull > *,
+.wp-block-template-part-header > * {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
 }
 
 @media (max-width: 768px) {
 
     header,
     .site-header {
-        padding-top: 10px !important;
-        padding-bottom: 10px !important;
+        padding-top: 8px !important;
+        padding-bottom: 8px !important;
     }
 }
 
@@ -282,12 +314,14 @@ body.is-dark-theme .wp-block-template-part-header {
 }
 
 footer,
+footer.wp-block-group,
+footer.alignfull,
 .wp-block-template-part-footer {
     grid-row: 3;
     margin-top: auto;
-    padding: 2.5rem 0;
-    border-top: 1px solid rgba(0, 0, 0, .05);
-    background-color: var(--wp--preset--color--neutral-light, #f8fafc);
+    padding: 0 !important;
+    border-top: none !important;
+    background-color: transparent !important;
     transition: all .3s ease
 }
 
@@ -295,6 +329,63 @@ body.is-dark-theme footer,
 body.is-dark-theme .wp-block-template-part-footer {
     background-color: rgba(30, 41, 59, .5);
     border-top-color: hsla(0, 0%, 100%, .05)
+}
+
+/* Custom Footer List Styling */
+footer ul,
+footer ul.is-style-no-disc {
+    list-style-type: none !important;
+    list-style: none !important;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+}
+
+footer li,
+footer .wp-block-list-item {
+    list-style-type: none !important;
+    list-style: none !important;
+    padding: 0.35rem 0 !important;
+    margin: 0 !important;
+    line-height: 1.5 !important;
+    border-bottom: none !important;
+}
+
+footer li a,
+footer .wp-block-list-item a {
+    color: var(--wp--preset--color--neutral-dark, #334155) !important;
+    font-weight: 500 !important;
+    font-size: 0.95rem !important;
+    transition: color 0.2s ease !important;
+}
+
+footer li a:hover,
+footer .wp-block-list-item a:hover {
+    color: var(--wp--preset--color--primary) !important;
+    text-decoration: none !important;
+}
+
+body.is-dark-theme footer li a,
+body.is-dark-theme footer .wp-block-list-item a {
+    color: var(--wp--preset--color--neutral-dark, #cbd5e1) !important;
+}
+
+body.is-dark-theme footer li a:hover,
+body.is-dark-theme footer .wp-block-list-item a:hover {
+    color: var(--wp--preset--color--secondary) !important;
+}
+
+/* Footer paragraphs and text */
+footer p,
+footer span,
+footer .blockbiva-copyright {
+    color: var(--wp--preset--color--neutral-dark, #475569) !important;
+    font-size: 0.9rem !important;
+}
+
+body.is-dark-theme footer p,
+body.is-dark-theme footer span,
+body.is-dark-theme footer .blockbiva-copyright {
+    color: var(--wp--preset--color--neutral-dark, #cbd5e1) !important;
 }
 
 .wp-site-blocks {
@@ -305,11 +396,13 @@ body.is-dark-theme .wp-block-template-part-footer {
 }
 
 main,
+main.wp-block-group.alignfull,
+main.wp-block-group.alignfull > .wp-block-group.alignfull,
 .wp-block-group.alignfull[tagname=main],
 .wp-block-template-part-header+.wp-block-group {
     grid-row: 2;
-    padding-top: var(--content-top-spacing, 60px) !important;
-    padding-bottom: var(--content-bottom-spacing, 60px) !important
+    padding-top: 0 !important;
+    padding-bottom: 0 !important
 }
 
 @media (max-width: 768px) {
@@ -348,8 +441,8 @@ main,
 .wp-block-group.alignfull {
     padding-left: var(--wp--style--root--padding-right, 1.5rem);
     padding-right: var(--wp--style--root--padding-left, 1.5rem);
-    padding-top: var(--section-spacing) !important;
-    padding-bottom: var(--section-spacing) !important
+    padding-top: var(--section-spacing);
+    padding-bottom: var(--section-spacing)
 }
 
 .wp-block-button__link {
@@ -707,19 +800,32 @@ body.is-dark-theme select::placeholder {
     align-items: center;
     justify-content: center;
     font-size: 1.25rem;
-    transition: transform .2s ease, background-color .2s ease
+    transition: transform .3s cubic-bezier(0.4, 0, 0.2, 1), background-color .3s ease, box-shadow .3s ease
 }
 
 .dark-mode-toggle:hover {
-    transform: scale(1.1)
+    transform: scale(1.15) rotate(15deg);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15)
+}
+
+.dark-mode-toggle.is-animating {
+    animation: blockbiva-toggle-spin 0.5s cubic-bezier(0.4, 0, 0.2, 1)
+}
+
+@keyframes blockbiva-toggle-spin {
+    0% { transform: scale(1) rotate(0deg) }
+    50% { transform: scale(0.8) rotate(180deg) }
+    100% { transform: scale(1) rotate(360deg) }
 }
 
 .dark-mode-toggle .moon {
-    display: none
+    display: none;
+    transition: opacity .3s ease
 }
 
 .dark-mode-toggle .sun {
-    display: block
+    display: block;
+    transition: opacity .3s ease
 }
 
 .is-dark-theme .dark-mode-toggle .sun {
@@ -1384,6 +1490,367 @@ ul.products li.product .onsale {
     .wp-block-query .wp-block-post-template {
         display: block !important;
     }
+}
+
+/* =============================================
+   UI/UX ENHANCEMENTS
+   ============================================= */
+
+/* --- Gradient Button Style --- */
+.is-style-blockbiva-gradient .wp-block-button__link {
+    background: linear-gradient(135deg, var(--wp--preset--color--primary) 0%, var(--wp--preset--color--secondary) 100%) !important;
+    color: #fff !important;
+    border: none !important;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+    position: relative;
+    overflow: hidden
+}
+
+.is-style-blockbiva-gradient .wp-block-button__link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease
+}
+
+.is-style-blockbiva-gradient .wp-block-button__link:hover::before {
+    left: 100%
+}
+
+.is-style-blockbiva-gradient .wp-block-button__link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4)
+}
+
+/* --- Dark Button Style --- */
+.is-style-blockbiva-dark .wp-block-button__link {
+    background: var(--wp--preset--color--contrast) !important;
+    color: var(--wp--preset--color--base) !important;
+    border: none
+}
+
+.is-style-blockbiva-dark .wp-block-button__link:hover {
+    opacity: 0.85;
+    transform: translateY(-2px)
+}
+
+/* --- Outline Bold Button Style --- */
+.is-style-blockbiva-outline-bold .wp-block-button__link {
+    background: transparent !important;
+    border: 2px solid var(--wp--preset--color--primary) !important;
+    color: var(--wp--preset--color--primary) !important;
+    font-weight: 700
+}
+
+.is-style-blockbiva-outline-bold .wp-block-button__link:hover {
+    background: var(--wp--preset--color--primary) !important;
+    color: #fff !important
+}
+
+/* --- Card Entrance Animations --- */
+.blockbiva-will-animate {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)
+}
+
+.blockbiva-will-animate:nth-child(2) { transition-delay: 0.1s }
+.blockbiva-will-animate:nth-child(3) { transition-delay: 0.2s }
+.blockbiva-will-animate:nth-child(4) { transition-delay: 0.3s }
+.blockbiva-will-animate:nth-child(5) { transition-delay: 0.4s }
+.blockbiva-will-animate:nth-child(6) { transition-delay: 0.5s }
+
+.blockbiva-animate-in {
+    opacity: 1 !important;
+    transform: none !important
+}
+
+/* --- Blog Card Image Zoom on Hover --- */
+.wp-block-post-featured-image {
+    overflow: hidden;
+    border-radius: 16px 16px 0 0
+}
+
+.wp-block-post-featured-image img {
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important
+}
+
+.wp-block-post:hover .wp-block-post-featured-image img {
+    transform: scale(1.05)
+}
+
+/* --- Blog Post Card Hover Lift --- */
+.wp-block-post {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease
+}
+
+.wp-block-post:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 10px 10px -5px rgba(0, 0, 0, 0.03)
+}
+
+/* --- Footer Social Icons Hover --- */
+footer .wp-block-social-links .wp-block-social-link a {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease !important
+}
+
+footer .wp-block-social-links .wp-block-social-link:hover a {
+    transform: translateY(-3px) scale(1.15) !important
+}
+
+footer .wp-block-social-links .wp-block-social-link:hover {
+    opacity: 0.8
+}
+
+/* --- Footer Gradient Divider --- */
+footer .wp-block-separator {
+    border: none !important;
+    height: 2px !important;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent) !important;
+    margin: 2rem 0 !important;
+    opacity: 1 !important
+}
+
+/* --- Scroll-to-Top Progress Ring --- */
+.blockbiva-scroll-to-top .progress-ring {
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    pointer-events: none
+}
+
+.blockbiva-scroll-to-top .progress-ring__circle {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.4);
+    stroke-width: 2;
+    stroke-linecap: round;
+    transform: rotate(-90deg);
+    transform-origin: center;
+    transition: stroke-dashoffset 0.1s linear
+}
+
+/* --- Rounded Large Image Style --- */
+.is-style-blockbiva-rounded-lg img {
+    border-radius: 16px !important
+}
+
+/* --- Prefers Reduced Motion --- */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important
+    }
+
+    .blockbiva-will-animate {
+        opacity: 1 !important;
+        transform: none !important
+    }
+
+    .wp-block-button__link:hover,
+    .is-style-blockbiva-card-soft:hover,
+    .dark-mode-toggle:hover {
+        transform: none !important
+    }
+
+    .blockbiva-scroll-to-top {
+        transition: none !important
+    }
+}
+
+/* --- Smooth Scrolling (when user allows motion) --- */
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth
+    }
+}
+
+/* --- Hero Badge Glass Effect --- */
+.blockbiva-hero-badge {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    display: inline-block !important;
+    width: auto !important;
+    margin: 0 !important;
+    animation: blockbiva-pulse-glow 3s infinite alternate
+}
+
+@keyframes blockbiva-pulse-glow {
+    0% {
+        border-color: rgba(255, 255, 255, 0.1);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05)
+    }
+    100% {
+        border-color: rgba(99, 102, 241, 0.4);
+        box-shadow: 0 4px 20px rgba(99, 102, 241, 0.15)
+    }
+}
+
+/* --- Hero Trust Logos Grid --- */
+.blockbiva-hero-logos {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    flex-wrap: wrap !important;
+    gap: 2.5rem !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+    padding-top: 2rem !important;
+    margin-top: 1.5rem !important
+}
+
+.blockbiva-hero-logos p {
+    margin: 0 !important;
+    opacity: 0.65;
+    transition: opacity 0.3s ease, transform 0.3s ease !important
+}
+
+.blockbiva-hero-logos p:not(:first-child):hover {
+    opacity: 1;
+    transform: translateY(-2px)
+}
+
+@media (max-width: 768px) {
+    .blockbiva-hero-logos {
+        justify-content: center !important;
+        gap: 1.5rem !important;
+        padding-top: 1.5rem !important
+    }
+}
+
+/* --- Blockbiva Site Layout Collapsing Margins Resets --- */
+.wp-site-blocks > * {
+    margin-top: 0 !important;
+    margin-block-start: 0 !important;
+    margin-bottom: 0 !important;
+    margin-block-end: 0 !important;
+}
+
+main > :first-child,
+main > :first-child > :first-child,
+main > :first-child > :first-child > :first-child {
+    margin-top: 0 !important;
+    margin-block-start: 0 !important;
+}
+
+main > :last-child,
+main > :last-child > :last-child,
+main > :last-child > :last-child > :last-child {
+    margin-bottom: 0 !important;
+    margin-block-end: 0 !important;
+}
+
+/* --- Pricing Section Styles --- */
+.blockbiva-pricing-section {
+    background-color: var(--wp--preset--color--surface-variation) !important;
+}
+
+.blockbiva-pricing-card {
+    background-color: var(--wp--preset--color--base) !important;
+    border-color: rgba(0, 0, 0, 0.08) !important;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.02) !important;
+}
+
+.blockbiva-pricing-card:hover {
+    transform: translateY(-8px) !important;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02) !important;
+    border-color: rgba(99, 102, 241, 0.2) !important;
+}
+
+.blockbiva-pricing-card.is-popular {
+    border-color: var(--wp--preset--color--primary) !important;
+    position: relative;
+    box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.05), 0 4px 6px -2px rgba(99, 102, 241, 0.02) !important;
+}
+
+.blockbiva-pricing-card.is-popular:hover {
+    border-color: var(--wp--preset--color--primary-dark) !important;
+    box-shadow: 0 20px 25px -5px rgba(99, 102, 241, 0.1), 0 10px 10px -5px rgba(99, 102, 241, 0.04) !important;
+}
+
+body.is-dark-theme .blockbiva-pricing-card {
+    border-color: rgba(255, 255, 255, 0.06) !important;
+}
+
+/* --- FAQ Section Styles --- */
+.blockbiva-faq-section {
+    background-color: var(--wp--preset--color--base) !important;
+}
+
+.blockbiva-faq-item {
+    background-color: var(--wp--preset--color--surface-variation) !important;
+    border-color: rgba(0, 0, 0, 0.06) !important;
+    transition: all 0.2s ease !important;
+}
+
+.blockbiva-faq-item:hover {
+    border-color: rgba(99, 102, 241, 0.3) !important;
+}
+
+body.is-dark-theme .blockbiva-faq-item {
+    border-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+/* --- Blockbiva Header Flex Alignment --- */
+.blockbiva-header-container {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    flex-wrap: nowrap !important;
+    width: 100% !important;
+    gap: 1.5rem !important;
+}
+
+.blockbiva-header-container .wp-block-navigation {
+    margin: 0 !important;
+    flex-grow: 1 !important;
+    justify-content: flex-end !important;
+    flex-wrap: nowrap !important;
+}
+
+.blockbiva-header-container .header-search-v2 {
+    margin: 0 !important;
+    flex-shrink: 0 !important;
+}
+
+.blockbiva-header-container .dark-mode-toggle-wrapper {
+    margin: 0 !important;
+    flex-shrink: 0 !important;
+}
+
+/* Fix vertical misalignment of logo/menu items */
+.blockbiva-header-container > * {
+    display: inline-flex !important;
+    align-items: center !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+/* --- White Text Contrast & Anti-Blur fixes --- */
+.has-background h1,
+.has-background h2,
+.has-background h3,
+.has-background p,
+.is-style-blockbiva-glass h1,
+.is-style-blockbiva-glass h2,
+.is-style-blockbiva-glass h3,
+.is-style-blockbiva-glass p,
+.blockbiva-hero-badge {
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+    text-shadow: 0 0 1px transparent !important;
 }
 
 /*# sourceMappingURL=main.css.map */

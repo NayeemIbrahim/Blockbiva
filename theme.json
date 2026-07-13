@@ -247,6 +247,35 @@
 					"lineHeight": "1.3"
 				}
 			},
+			"h4": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--heading)",
+					"fontSize": "var(--wp--preset--font-size--large)",
+					"fontWeight": "600",
+					"lineHeight": "1.4"
+				}
+			},
+			"h5": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--heading)",
+					"fontSize": "var(--wp--preset--font-size--medium)",
+					"fontWeight": "600",
+					"lineHeight": "1.5"
+				}
+			},
+			"h6": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--heading)",
+					"fontSize": "var(--wp--preset--font-size--small)",
+					"fontWeight": "700",
+					"lineHeight": "1.5",
+					"textTransform": "uppercase",
+					"letterSpacing": "0.05em"
+				},
+				"color": {
+					"text": "var(--wp--preset--color--secondary)"
+				}
+			},
 			"cite": {
 				"typography": {
 					"fontSize": "var(--wp--preset--font-size--small)",

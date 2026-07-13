@@ -1,1 +1,164 @@
-.editor-styles-wrapper{line-height:1.6}/*# sourceMappingURL=editor-style.css.map */
+/**
+ * Blockbiva Editor Styles
+ * Mirrors frontend appearance in the Gutenberg block editor.
+ *
+ * @package Blockbiva
+ */
+
+/* ----------------------------------------
+   1. Typography — Match frontend headings
+   ---------------------------------------- */
+.editor-styles-wrapper h1,
+.editor-styles-wrapper h2,
+.editor-styles-wrapper h3,
+.editor-styles-wrapper h4,
+.editor-styles-wrapper h5,
+.editor-styles-wrapper h6 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.75em;
+}
+
+.editor-styles-wrapper h1 {
+    font-size: clamp(2.5rem, 5vw + 1rem, 4.5rem);
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+}
+
+.editor-styles-wrapper h2 {
+    font-size: clamp(2rem, 4vw + 1rem, 3.5rem);
+    letter-spacing: -0.025em;
+    line-height: 1.2;
+}
+
+.editor-styles-wrapper h3 {
+    font-size: clamp(1.75rem, 3vw + 1rem, 2.5rem);
+}
+
+.editor-styles-wrapper h4 {
+    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.editor-styles-wrapper h5 {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.editor-styles-wrapper h6 {
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    line-height: 1.5;
+}
+
+/* ----------------------------------------
+   2. Body text
+   ---------------------------------------- */
+.editor-styles-wrapper {
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
+    color: #0f172a;
+}
+
+.editor-styles-wrapper p {
+    line-height: 1.7;
+    max-width: 65ch;
+}
+
+/* ----------------------------------------
+   3. Links
+   ---------------------------------------- */
+.editor-styles-wrapper a {
+    color: var(--wp--preset--color--primary, #6366f1);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* ----------------------------------------
+   4. Buttons — match frontend pill style
+   ---------------------------------------- */
+.editor-styles-wrapper .wp-block-button__link {
+    border-radius: 50px;
+    font-weight: 600;
+    padding: 0.875rem 2rem;
+    transition: all 0.3s ease;
+}
+
+/* ----------------------------------------
+   5. Card & Glass styles preview
+   ---------------------------------------- */
+.editor-styles-wrapper .is-style-blockbiva-card-soft {
+    background: #fff;
+    border-radius: 16px;
+    padding: 2.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.editor-styles-wrapper .is-style-blockbiva-glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 24px;
+    padding: 3rem;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+}
+
+/* ----------------------------------------
+   6. Images
+   ---------------------------------------- */
+.editor-styles-wrapper img {
+    max-width: 100%;
+    height: auto;
+}
+
+.editor-styles-wrapper .is-style-blockbiva-rounded-lg img {
+    border-radius: 16px;
+}
+
+/* ----------------------------------------
+   7. Lists — clean styling
+   ---------------------------------------- */
+.editor-styles-wrapper ul,
+.editor-styles-wrapper ol {
+    padding-left: 1.5rem;
+}
+
+.editor-styles-wrapper li {
+    margin-bottom: 0.5rem;
+    line-height: 1.7;
+}
+
+/* ----------------------------------------
+   8. Separator
+   ---------------------------------------- */
+.editor-styles-wrapper .wp-block-separator {
+    border-color: rgba(0, 0, 0, 0.08);
+}
+
+/* ----------------------------------------
+   9. Blockquote
+   ---------------------------------------- */
+.editor-styles-wrapper blockquote,
+.editor-styles-wrapper .wp-block-quote {
+    border-left: 4px solid var(--wp--preset--color--primary, #6366f1);
+    padding-left: 1.5rem;
+    font-style: italic;
+    color: #334155;
+}
+
+/* ----------------------------------------
+   10. Gradient button style preview
+   ---------------------------------------- */
+.editor-styles-wrapper .is-style-blockbiva-gradient .wp-block-button__link {
+    background: linear-gradient(135deg, #6366f1 0%, #0ea5e9 100%);
+    color: #fff;
+    border: none;
+}

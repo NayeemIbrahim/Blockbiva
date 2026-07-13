@@ -37,8 +37,8 @@ class Blockbiva_Enqueue
             echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' . "\n";
         }, 1);
 
-        // 1. Remove jQuery on frontend to improve performance (load only if absolutely needed)
-        if (!is_admin()) {
+        // 1. Remove jQuery on frontend to improve performance (filterable for plugin compat)
+        if (!is_admin() && apply_filters('blockbiva_deregister_jquery', true)) {
             wp_deregister_script('jquery');
         }
 
@@ -65,8 +65,9 @@ class Blockbiva_Enqueue
 
         // 4. Localize Settings
         wp_localize_script('blockbiva-scripts', 'blockbivaSettings', array(
-            'darkModeDefault' => get_theme_mod('dark_mode_default', false),
-            'scrollThreshold' => get_theme_mod('scroll_to_top_threshold', 300),
+            'darkModeDefault'  => get_theme_mod('dark_mode_default', false),
+            'scrollThreshold'  => get_theme_mod('scroll_to_top_threshold', 300),
+            'headerAutoHide'   => get_theme_mod('header_auto_hide', false),
         ));
 
         // 5. Conditional scripts

@@ -474,6 +474,13 @@ class Blockbiva_Customizer
             'settings' => 'primary_color',
         )));
 
+        // Global Secondary Color
+        $wp_customize->add_setting('secondary_color', array(
+            'default' => '#0ea5e9',
+            'sanitize_callback' => 'sanitize_hex_color',
+            'transport' => 'refresh',
+        ));
+
         $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'secondary_color_control', array(
             'label' => esc_html__('Secondary Color', 'blockbiva'),
             'section' => 'blockbiva_design_settings',
@@ -828,7 +835,6 @@ class Blockbiva_Customizer
         $header_padding_mobile = get_theme_mod('header_padding_mobile', 10);
 
         $border_radius = get_theme_mod('global_border_radius', 16);
-        $border_radius = get_theme_mod('global_border_radius', 16);
         $section_spacing_desktop = get_theme_mod('section_spacing_desktop', 4);
         $section_spacing_tablet = get_theme_mod('section_spacing_tablet', 3);
         $section_spacing_mobile = get_theme_mod('section_spacing_mobile', 2);
@@ -1161,9 +1167,20 @@ class Blockbiva_Customizer
                 break;
         }
 
+        $size = get_theme_mod('scroll_to_top_size', 50);
+        $ring_size = $size + 6;
+        $ring_radius = ($size / 2) + 1;
+
         printf(
-            '<button class="blockbiva-scroll-to-top" aria-label="%s">%s</button>',
+            '<button class="blockbiva-scroll-to-top" aria-label="%s">' .
+            '<svg class="progress-ring" width="%d" height="%d"><circle class="progress-ring__circle" r="%d" cx="%d" cy="%d"/></svg>' .
+            '%s</button>',
             esc_attr__('Scroll to top', 'blockbiva'),
+            $ring_size,
+            $ring_size,
+            $ring_radius,
+            $ring_size / 2,
+            $ring_size / 2,
             $svg
         );
     }
@@ -1184,4 +1201,4 @@ function blockbiva_sanitize_select($input, $setting)
     return (array_key_exists($input, $control->choices) ? $input : $setting->default);
 }
 
-new Blockbiva_Customizer();
+
